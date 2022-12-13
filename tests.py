@@ -1,5 +1,5 @@
 import random
-
+from main import locate_card
 """
 Constraints:
     1 <= cards.length <= 10
@@ -25,10 +25,15 @@ for i in range(10):
 j = 0
 for i in cards:
     print("cards: ", i)
-    if j <= 8:
-        print("query: ", random.shuffle(i))
+    if j < 8:
+        x = random.choice(i)
+        print("query: ", x)
+        result = locate_card(i, x)
     else:
-        print("query: ", random.randint(target_min + 1, target_max - 1))
+        x = random.randint(target_min + 1, target_max - 1)
+        print("query: ", x)
+        result = locate_card(i, x)
+    print(result)
     j += 1
     print()
 # tests = []

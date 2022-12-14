@@ -1,5 +1,7 @@
 import random
+from jovian.pythondsa import evaluate_test_case
 from main import locate_card
+from importing_data_from_json_file_into_a_variable import data_2
 """
 Constraints:
     1 <= cards.length <= 10
@@ -23,18 +25,20 @@ for i in range(10):
 
 # target = random.randint(target_min + 1, target_max - 1)
 j = 0
-for i in cards:
-    print("cards: ", i)
-    if j < 8:
-        x = random.choice(i)
-        print("query: ", x)
-        result = locate_card(i, x)
-    else:
-        x = random.randint(target_min + 1, target_max - 1)
-        print("query: ", x)
-        result = locate_card(i, x)
-    print(result)
-    j += 1
-    print()
-# tests = []
+# for i in cards:
+#     print("cards: ", i)
+#     if j < 8:
+#         x = random.choice(i)
+#         print("query: ", x)
+#         result = locate_card(i, x)
+#     else:
+#         x = random.randint(target_min + 1, target_max - 1)
+#         print("query: ", x)
+#         result = locate_card(i, x)
+#     print(result)
+#     j += 1
+#     print()
+# # tests = []
+print(evaluate_test_case(locate_card, data_2))
+
 
